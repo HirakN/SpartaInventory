@@ -29,6 +29,11 @@ class Login
     fill_in(email, with: 'test@spartaglobal.com')
   end
 
+  def fill_in_email_field_incorrectly
+    email = find_email_field
+    fill_in(email, with: 'tttest@spartaglobal.com')
+  end
+
   def find_password_field
     find(:xpath, PASSWORD_FIELD)
   end
