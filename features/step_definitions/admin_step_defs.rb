@@ -12,7 +12,7 @@ end
 
 # <-----New Scenario---->
 
-Given("that I am logged in as an admin") do
+Given("that I am logged in") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 

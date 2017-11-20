@@ -1,11 +1,9 @@
 Given("that I am on the items page") do
-  pending # Write code here that turns the phrase above into
- concrete actions
+  pending # Write code here that turns the phrase above into concrete actions
 end
 
 And("that there are items which are checked out") do
-  pending # Write code here that turns the phrase above into
- concrete actions
+  pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then("the lender and the borrower names will be visible for
@@ -15,7 +13,7 @@ end
 
 # <-----New Scenario---->
 
-Given("I am logged in as a user") do
+Given("I am logged in") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 

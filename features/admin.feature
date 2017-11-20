@@ -1,4 +1,4 @@
-Feature: Assign items to academy
+Feature: Admin commands
 As an admin
 I should be able to assign an item to an academy so that I can see where that item is kept
 I should be able to check in an item from the items page so that I don't have to filter the logs to find a specific item
@@ -14,7 +14,7 @@ Scenario: View overdue items
 
 @create_academy
 Scenario: Create a new academy
-  Given that I am logged in as an admin
+  Given that I am logged in
   When I enter an academy name
   And I choose an academy inventory manager from a list of administrators
   And I submit the data
@@ -29,7 +29,7 @@ Scenario: Assign created items to an academy
 
 @check_in
 Scenario: Check in items from item page
-  Given that I am logged in as an admin
+  Given that I am logged in
   And I am on the items page
   When I click check-in for a item
   And confirm by clicking ok
@@ -39,7 +39,7 @@ Scenario: Check in items from item page
 
 @description
 Scenario: All item descriptions should be filled in
-  Given that I am logged in as an admin
+  Given that I am logged in
   And I am on the create new items page
   When I leave an empty description
   And I click save item
