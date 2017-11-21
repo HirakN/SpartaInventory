@@ -12,7 +12,7 @@ Scenario: View borrower and lender of each checked out item
 
 @edit_item
 Scenario: Edit created items
-  Given I am logged in as a user
+  Given I am logged in
   And I am on the edit item page
   When I change the details
   And click save item
