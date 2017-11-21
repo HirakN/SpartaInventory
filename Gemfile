@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 
-
 ############## Gem for bootstrap 3 ###############
 gem 'bootstrap-sass', '~> 3.3.6'
 

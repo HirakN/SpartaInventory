@@ -66,6 +66,6 @@ end
 
 #   DatabaseCleaner.strategy = :truncation
 # config.before(:all) do
-#   DatabaseCleaner.clean
+#   DatabaseCleaner.cleanx  
 #   Rails.application.load_seed
 # end
