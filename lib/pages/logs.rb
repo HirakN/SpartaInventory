@@ -17,7 +17,7 @@ class Logs
   end
 
   def click_checkout_item_button
-    find_checkout_navbar_link.click
+    find_checkout_item_button.click
   end
 
   def find_checkout_text
