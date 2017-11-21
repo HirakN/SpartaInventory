@@ -68,6 +68,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem "pry"
+  gem "rspec-rails"
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -86,4 +88,5 @@ group :test do
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
