@@ -6,6 +6,7 @@ class Logs
   CHECKOUT_ITEM_BUTTON ||= "html/body/div[2]/div/div/a"
   CHECK_IN_LINK ||= "/html/body/div[2]/div/div/table/tbody/tr/td[7]/a"
   DELETE_LINK ||= "html/body/div[2]/div/div/table/tbody/tr/td[8]/a"
+  CHECKOUT_ITEM_HEADING ||= "/html/body/div[2]/div/div/h1"
 
   def visit_logs_page
     visit('/logs')
@@ -17,6 +18,10 @@ class Logs
 
   def click_checkout_item_button
     find_checkout_navbar_link.click
+  end
+
+  def find_checkout_text
+    find(:xpath, CHECKOUT_ITEM_HEADING)
   end
 
   def find_check_in_link

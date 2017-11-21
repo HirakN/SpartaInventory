@@ -13,19 +13,34 @@ class CreateItem
     visit(URL)
   end
 
-  def description
+  def find_description_field
     find(:xpath, DESCRIPTION)
   end
 
-  def serial_field
+  def fill_description_field
+    description = find_description_field
+    fill_in(description, with: 'Boardroom projector')
+  end
+
+  def find_serial_field
     find(:xpath, SERIAL_FIELD)
   end
 
-  def academy_dropdown
+  def fill_serial_field
+    serial = find_serial_field
+    fill_in(serial, with: 'P002')
+  end
+
+  def find_academy_dropdown
     find(:xpath, ACADEMY_DROPDOWN)
   end
 
-  def save_item_button
+  def find_save_item_button
     find(:xpath, SAVE_ITEM_BUTTON)
   end
+
+  def click_save_item_button
+    find_save_item_button.click
+  end
+
 end
