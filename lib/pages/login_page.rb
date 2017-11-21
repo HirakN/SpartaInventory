@@ -26,12 +26,12 @@ class Login
 
   def fill_in_email_field
     email = find_email_field
-    fill_in(email, with: 'test@spartaglobal.com')
+    email.set('test@spartaglobal.com')
   end
 
   def fill_in_email_field_incorrectly
     email = find_email_field
-    fill_in(email, with: 'tttest@spartaglobal.com')
+    email.set('tttest@spartaglobal.com')
   end
 
   def find_password_field
@@ -40,7 +40,7 @@ class Login
 
   def fill_in_password_field
     password = find_password_field
-    fill_in(password, with: 'spartatest')
+    password.set('spartatest')
   end
 
   def find_submit_button
@@ -48,7 +48,7 @@ class Login
   end
 
   def click_submit_button
-    click.find_submit_button
+    find_submit_button.click
   end
 
 end
