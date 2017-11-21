@@ -54,7 +54,9 @@ Then("a record is created") do
 end
 
 And("the record is displayed") do
-  pending # Write code here that turns the phrase above into concrete actions
+  # Item successfully created notification
+  # FLAKY TEST!! SHOULD BE ABOVE!
+  @inventory.item_show_page.find_success_notification
 end
 
 And("I am on the checkout item page") do
