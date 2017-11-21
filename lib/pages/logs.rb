@@ -39,5 +39,4 @@ class Logs
   def click_delete_link
     find_delete_link.click
   end
-
 end
