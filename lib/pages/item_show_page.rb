@@ -21,4 +21,8 @@ class ItemShowPage
     find(:xpath, BACK_BUTTON)
   end
 
+  def find_due_date
+    find(:xpath, DUE_DATE)
+  end
+
 end
