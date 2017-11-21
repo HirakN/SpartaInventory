@@ -9,10 +9,10 @@ Given("I am already logged in") do
 end
 
 Given("I am on the create new items page") do
-navbar.find_items_link
-sleep 5
-navbar.click_items_link
-sleep 5
+  navbar.find_items_link
+  sleep 5
+  navbar.click_items_link
+  sleep 5
 end
 
 
