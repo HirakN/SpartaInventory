@@ -135,7 +135,9 @@
 # log2 = Log.create({item_id:item2.id, user_id:user2.id, given_to:user.id , returner_id:user.id, date_taken:'01/03/2017', date_returned:'11/03/2017' })
 # log3 = Log.create({item_id:item.id, user_id:user2.id, given_to:user3.id , returner_id:user3.id, date_taken:'01/03/2017', date_returned:'11/03/2017' })
 
-
+Academy.create({name: 'Richmond'})
+Academy.create({name: 'Birmingham'})
+Academy.create({name: 'Leeds'})
 
 
 
