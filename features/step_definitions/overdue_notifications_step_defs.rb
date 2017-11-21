@@ -5,6 +5,7 @@ Given("that I have checked out an item") do
   login_page.click_submit_button
   items.url
   item_show_page.visit_page
+  sleep 3
 end
 
 And("the item has not been returned") do
@@ -12,13 +13,16 @@ And("the item has not been returned") do
 end
 
 And("that I have set a date for its return") do
-  pending
+  item_show_page.find_due_date
+  sleep 3
 end
 
 When("that date is reached") do
   item_show_page.find_due_date
+  sleep 3
 end
 
 Then("I expect the lender to receive a notification") do
   item_show_page.find_success_notification
+  sleep 3
 end
