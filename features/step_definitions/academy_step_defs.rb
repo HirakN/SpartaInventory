@@ -8,7 +8,7 @@ When("I enter an academy name") do
 end
 
 When("I choose an academy inventory manager from a list of administrators") do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
 end
 
 When("I submit the data") do
@@ -39,5 +39,5 @@ When("I save the record") do
 end
 
 Then("I expect the record to be associated with that academy") do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
 end
