@@ -19,9 +19,9 @@ When("I click delete") do
 end
 
 When("I click ok on the confirmation") do
-  pending # Write code here that turns the phrase above into concrete actions
+
 end
 
 Then("the log is removed from the database") do
-  pending # Write code here that turns the phrase above into concrete actions
+
 end
