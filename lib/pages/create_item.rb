@@ -19,7 +19,7 @@ class CreateItem
 
   def fill_description_field
     description = find_description_field
-    fill_in(description, with: 'Boardroom projector')
+    description.set('Boardroom projector')
   end
 
   def find_serial_field
@@ -28,7 +28,7 @@ class CreateItem
 
   def fill_serial_field
     serial = find_serial_field
-    fill_in(serial, with: 'P002')
+    serial.set('P002')
   end
 
   def find_academy_dropdown
