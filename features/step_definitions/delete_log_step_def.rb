@@ -10,7 +10,7 @@ end
 
 When("I click delete") do
 
-
+    logs.click_delete_link
 
 end
 

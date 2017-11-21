@@ -131,7 +131,7 @@
  item2 = Item.create({description:'Macbook 2012', serial:'GHTJUY90K000', created_at: '08/10/2017', updated_at: '20/11/2017'})
  item3 = Item.create({description:'Macbook 2013', serial:'ASDJUY90K777', created_at: '07/10/2017', updated_at: '19/11/2017'})
 
-# log = Log.create({item_id:item.id, user_id:user.id, given_to:user.id, returner_id:user2.id, date_taken:'01/03/2017', date_returned:'11/03/2017' })
+log = Log.create({item_id:item.id, user_id:user.id, given_to:user.id, returner_id:user2.id, date_taken:'01/03/2017', date_returned:'11/03/2017', created_at: '04/06/2017', updated_at: '05/06/2017' })
 # log2 = Log.create({item_id:item2.id, user_id:user2.id, given_to:user.id , returner_id:user.id, date_taken:'01/03/2017', date_returned:'11/03/2017' })
 # log3 = Log.create({item_id:item.id, user_id:user2.id, given_to:user3.id , returner_id:user3.id, date_taken:'01/03/2017', date_returned:'11/03/2017' })
 
