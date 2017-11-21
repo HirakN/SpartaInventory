@@ -1,5 +1,9 @@
+
 Given("that I am on the item list page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  login_page.visit_login_page
+  login_page.fill_in_email_field
+  login_page.fill_in_password_field
+  login_page.click_submit_button
 end
 
 When("there are items for where the return date is the same as or earlier than the current date") do
@@ -13,11 +17,16 @@ end
 # <-----New Scenario---->
 
 Given("that I am logged in") do
-  pending # Write code here that turns the phrase above into concrete actions
+  login_page.visit_login_page
+  login_page.fill_in_email_field
+  login_page.fill_in_password_field
+  login_page.click_submit_button
 end
 
 When("I enter an academy name") do
-  pending # Write code here that turns the phrase above into concrete actions
+  new_academy.visit_new_academy_page
+  new_academy.fill_in_name_field
+
 end
 
 And("I choose an academy inventory manager from a list of administrators") do
@@ -25,15 +34,21 @@ And("I choose an academy inventory manager from a list of administrators") do
 end
 
 And("I submit the data") do
-  pending # Write code here that turns the phrase above into concrete actions
+  new_academy.click_create_academy_button
 end
 
 Then("I expect a new academy to be created in the database") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
+#
+
 Given("that I am on the create/edit item page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  login_page.visit_login_page
+  login_page.fill_in_email_field
+  login_page.fill_in_password_field
+  login_page.click_submit_button
+
 end
 
 When("I select an academy from a list of those available") do
