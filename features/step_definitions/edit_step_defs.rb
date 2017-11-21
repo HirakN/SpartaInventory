@@ -1,4 +1,4 @@
-Given("I am logged in") do
+Given("I am already logged in and want to edit") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
