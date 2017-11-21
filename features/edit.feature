@@ -1,8 +1,8 @@
+@edit_item
 Feature: Edit Item
 As a user
 I should be able to edit an Item so that I can make corrections to the item
 
-@edit_item
 Scenario: Edit created items
   Given I am logged in
   And I am on the edit item page
