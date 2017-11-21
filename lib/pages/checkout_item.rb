@@ -9,25 +9,39 @@ class CheckoutItem
   BORROWER ||= '/html/body/div[2]/div/div/form/div[2]/select'
   DUE_DATE ||= '/html/body/div[2]/div/div/form/div[3]/input'
   CHECKOUT ||= '/html/body/div[2]/div/div/form/div[4]/input'
+  MAC_2 ||= '/html/body/div[2]/div/div/form/div[1]/select/option[2]'
+  BORROWER ||= '/html/body/div[2]/div/div/form/div[2]/select/option[21]'
 
   def visit_page
     visit(URL)
   end
 
-  def choose_item
+  def find_choose_item
     find(:xpath, CHOOSE_ITEM)
   end
 
-  def burrower
+  def find_burrower
     find(:xpath, BURROWER)
   end
 
-  def due_date
+  def find_due_date
     find(:xpath, DUE_DATE)
   end
 
-  def checkout
+  def find_checkout_button
     find(:xpath, CHECKOUT)
   end
 
+  def click_checkout_button
+    button = find_checkout_button
+    button.click
+  end
+
+  def choose_item_to_borrow
+    find(:xpath, MAC_2).click
+  end
+
+  def choose_borrower
+    find(:xpath, BORROWER).click
+  end
 end

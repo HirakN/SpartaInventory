@@ -7,7 +7,7 @@ class Login
   EMAIL_FIELD ||= "/html/body/div[2]/div/div/form/div[1]/input"
   PASSWORD_FIELD ||= "/html/body/div[2]/div/div/form/div[2]/input"
   SUBMIT_BUTTON ||= "/html/body/div[2]/div/div/form/div[3]/input"
-  ITEMS_LINK ||= "/html/body/nav/ul[1]/li[1]/a"
+
   def visit_login_page
     visit('/login')
   end
