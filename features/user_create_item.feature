@@ -2,17 +2,9 @@ Feature: Item usage
 
   Scenario: As a user I should be able to see the items
     Given I am already logged in
-    When I click on the items link 
+    When I click on the items link
     Then I am taken to the items page
     And I can see all of the items in the database
-
-  Scenario: I should be able to create an item
-    Given I am already logged in
-    And I am on the create new items page
-    When I enter in a description and a serial
-    And I click save item
-    Then a record is created
-    And the record is displayed
 
   Scenario: As a user I should be able to checkout an item so that I can keep a record of all of the people who hold items
     Given I am already logged in

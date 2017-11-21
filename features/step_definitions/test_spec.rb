@@ -1,5 +1,6 @@
 Given("I do something") do
   checkout_item.visit_page
+  sleep 5
 end
 
 Then("something happened") do
