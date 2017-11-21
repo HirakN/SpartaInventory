@@ -29,4 +29,5 @@ class CheckoutItem
   def checkout
     find(:xpath, CHECKOUT)
   end
+
 end
