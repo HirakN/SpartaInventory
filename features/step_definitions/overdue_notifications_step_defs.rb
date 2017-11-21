@@ -1,5 +1,5 @@
 Given("that I have checked out an item") do
-  pending # Write code here that turns the phrase above into concrete actions
+  
 end
 
 And("the item has not been returned") do

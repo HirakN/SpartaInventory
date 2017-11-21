@@ -6,18 +6,17 @@ Given("that I am logged in") do
 end
 
 And("Im on the create new items page") do
-  sleep 5
   navbar.click_items_link
-  items.click_add_new_item_button
-
+  items_page.click_add_new_item_button
+  sleep 5
 end
 
 When("I leave an empty description") do
-  pending # Write code here that turns the phrase above into concrete actions
+  create_item.fill_serial_field
 end
 
 And("I click save item") do
-  pending # Write code here that turns the phrase above into concrete actions
+  create_item.click_save_item_button
 end
 
 Then("I see an error message") do

@@ -17,7 +17,7 @@ class Logs
   end
 
   def click_checkout_item_button
-    find_checkout_navbar_link.click
+    find_checkout_item_button.click
   end
 
   def find_checkout_text
@@ -39,4 +39,9 @@ class Logs
   def click_delete_link
     find_delete_link.click
   end
+
+  def confirm_deletion_on_alert
+    page.driver.browser.switch_to.alert.accept
+  end
+
 end
