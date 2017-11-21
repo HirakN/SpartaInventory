@@ -7,7 +7,7 @@ class Login
   EMAIL_FIELD ||= "/html/body/div[2]/div/div/form/div[1]/input"
   PASSWORD_FIELD ||= "/html/body/div[2]/div/div/form/div[2]/input"
   SUBMIT_BUTTON ||= "/html/body/div[2]/div/div/form/div[3]/input"
-
+  ITEMS_LINK ||= "/html/body/nav/ul[1]/li[1]/a"
   def visit_login_page
     visit('/login')
   end
@@ -26,12 +26,12 @@ class Login
 
   def fill_in_email_field
     email = find_email_field
-    email.set(email, with: 'test@spartaglobal.com')
+    email.set('test@spartaglobal.com')
   end
 
   def fill_in_email_field_incorrectly
     email = find_email_field
-    fill_in(email, with: 'tttest@spartaglobal.com')
+    email.set('tttest@spartaglobal.com')
   end
 
   def find_password_field
@@ -40,7 +40,7 @@ class Login
 
   def fill_in_password_field
     password = find_password_field
-    password.set(password, with: 'spartatest')
+    password.set('spartatest')
   end
 
   def find_submit_button
