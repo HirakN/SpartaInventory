@@ -8,6 +8,7 @@ class CreateItem
   SERIAL_FIELD ||= '//*[@id=“item_serial"]'
   ACADEMY_DROPDOWN ||= '//*[@id=“item_academy_id"]'
   SAVE_ITEM_BUTTON ||= '//*[@id=“new_item"]/div[4]/input'
+  ERROR_MESSAGE_DIV ||= '//*[@id="error_explanation"]'
 
   def visit_page
     visit(URL)
@@ -35,12 +36,21 @@ class CreateItem
     find(:xpath, ACADEMY_DROPDOWN)
   end
 
+  def select_richmond_from_dropdown
+    dropdown = find_academy_dropdown
+    select "Richmond", :from => dropdown
+  end
+
   def find_save_item_button
     find(:xpath, SAVE_ITEM_BUTTON)
   end
 
   def click_save_item_button
     find_save_item_button.click
+  end
+
+  def find_error_div
+    find(:xpath, ERROR_MESSAGE_DIV)
   end
 
 end
