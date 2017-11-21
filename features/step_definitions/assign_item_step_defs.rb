@@ -1,4 +1,5 @@
-Given("I am already logged in") do
+
+Given("I am logged in") do
   login_page.visit_login_page
   login_page.find_email_field
   login_page.fill_in_email_field
@@ -8,16 +9,15 @@ Given("I am already logged in") do
   login_page.click_submit_button
 end
 
-Given("I am on the create new items page") do
-navbar.find_items_link
-sleep 5
-navbar.click_items_link
-sleep 5
+Given("I am on the create new items options page") do
+  navbar.find_items_link
+  sleep 5
+  navbar.click_items_link
+  sleep 5
 end
 
-
 And("I click on add item button") do
-  items.click_add_new_item_button
+  items_page.click_add_new_item_button
 end
 
 When("I enter in a description and a serial") do
