@@ -31,7 +31,7 @@ class Login
 
   def fill_in_email_field_incorrectly
     email = find_email_field
-    fill_in(email, with: 'tttest@spartaglobal.com')
+    email.set('tttest@spartaglobal.com')
   end
 
   def find_password_field

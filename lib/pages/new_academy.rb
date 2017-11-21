@@ -17,7 +17,7 @@ class NewAcademy
 
   def fill_in_name_field
     name = find_name_field
-    fill_in(name, with: 'Leeds')
+    name.set('Leeds')
   end
 
   def find_create_academy_button
