@@ -7,7 +7,7 @@ class ItemShowPage
   URL = 'http://localhost:3000/'
   BACK_BUTTON ||= '/html/body/div[2]/div/div/a'
   SUCCESS_NOTIFICATION ||= '/html/body/div[1]/div/div/p[1]'
-  DATE ||= '/html/body/div[2]/div/div/table/tbody/tr/td[6]''
+  DUE_DATE ||= '/html/body/div[2]/div/div/table/tbody/tr/td[6]'
 
   def visit_page
     visit(URL)
