@@ -59,28 +59,30 @@ And("the record is displayed") do
 end
 
 And("I am on the checkout item page") do
-
-  pending # Write code here that turns the phrase above into concrete actions
+  # Check the check out button is present
+  navbar.click_checkout_link
+  checkout_item.find_checkout_button
 end
 
 When("I select an item and a borrower") do
-  pending # Write code here that turns the phrase above into concrete actions
+  checkout_item.choose_item_to_borrow
+  checkout_item.choose_borrower
 end
 
 And("click the checkout item button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  checkout_item.click_checkout_button
 end
 
 Then("a log is created") do
-  pending # Write code here that turns the phrase above into concrete actions
+  item_show_page.find_success_notification
 end
 
 And("I am taken to the show log page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  item_show_page.find_back_button
 end
 
 And("I am on the logs page") do
-  pending # Write code here that turns the phrase above into concrete actions
+
 end
 
 When("I click check-in for a log") do
