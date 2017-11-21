@@ -25,7 +25,7 @@ module InventoryApp
       ItemShowPage.new
     end
 
-    def items
+    def items_page
       Item.new
     end
 
