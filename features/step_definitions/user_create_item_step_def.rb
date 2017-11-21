@@ -17,18 +17,18 @@ end
 
 Then("I am taken to the items page") do
   # Confirm landing on item page by "add new item" button presence
-  items.find_add_new_item_button
+  items_page.find_add_new_item_button
 end
 
 And("I can see all of the items in the database") do
   #  Confirm the columns for all items there
-  items.find_item_id_text
+  items_page.find_item_id_text
 end
 
 And("I am on the create new items page") do
   # Click the add new item button and check landing
-  items.find_add_new_item_button
-  items.click_add_new_item_button
+  items_page.find_add_new_item_button
+  items_page.click_add_new_item_button
   create_item.find_description_field
 end
 
