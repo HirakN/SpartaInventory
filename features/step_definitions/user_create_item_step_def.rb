@@ -82,7 +82,9 @@ And("I am taken to the show log page") do
 end
 
 And("I am on the logs page") do
-
+#back button is present to show we are on the logs page
+  logs_show_page.find_back_to_logs_button
+  logs_show_page.click_back_to_logs_button
 end
 
 When("I click check-in for a log") do
