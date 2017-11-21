@@ -16,7 +16,6 @@ Given("I am on the create new items options page") do
   sleep 5
 end
 
-
 And("I click on add item button") do
   items_page.click_add_new_item_button
 end
