@@ -83,15 +83,15 @@ And("I am taken to the show log page") do
 end
 
 And("I am on the logs page") do
-
+  logs.find_checkout_item_button
 end
 
 When("I click check-in for a log") do
-  pending # Write code here that turns the phrase above into concrete actions
+  logs.click_check_in_link
 end
 
 And("confirm by clicking ok") do
-  pending # Write code here that turns the phrase above into concrete actions
+  # NOT POSSIBLE FOR AN ALERT??
 end
 
 Then("the returned to and return date are set") do
