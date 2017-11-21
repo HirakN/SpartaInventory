@@ -1,5 +1,4 @@
 Feature: delete log
-
 As a user
 I should be able to delete a log so that if I make a mistake I can remove an incorrect log
 
