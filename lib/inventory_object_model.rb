@@ -11,7 +11,7 @@ require_relative 'pages/navbar.rb'
 require_relative 'pages/new_academy.rb'
 
 module InventoryApp
-# this is the superclass. This will contain sub classes that contain methods that navigate the pages.
+# this is the module. This will contain methods that contain methods that navigate the pages.
 
     def checkout_item
       CheckoutItem.new

@@ -1,37 +1,62 @@
 Given("I am already logged in") do
-  pending # Write code here that turns the phrase above into concrete actions
+  # Process for logging in
+  @inventory = InventoryApp.new
+  @inventory.login_page.visit_login_page
+  @inventory.login_page.find_email_field
+  @inventory.login_page.fill_in_email_field
+  @inventory.login_page.find_password_field
+  @inventory.login_page.fill_in_password_field
+  @inventory.login_page.find_submit_button
+  @inventory.login_page.click_submit_button
 end
 
 When("I click on the items link") do
-  pending # Write code here that turns the phrase above into concrete actions
+  # Find and click items in navigation bar
+  @inventory.navbar.find_items_link
+  @inventory.navbar.click_items_link
 end
 
 Then("I am taken to the items page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  # Confirm landing on item page by "add new item" button presence
+  @inventory.items.find_add_new_item_button
 end
 
 And("I can see all of the items in the database") do
-  pending # Write code here that turns the phrase above into concrete actions
+  #  Confirm the columns for all items there
+  @inventory.items.find_item_id_text
 end
 
 And("I am on the create new items page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  # Click the add new item button and check landing
+  @inventory.items.find_add_new_item_button
+  @inventory.items.click_add_new_item_button
+  @inventory.create_item.find_description_field
 end
 
 When("I enter in a description and a serial") do
-  pending # Write code here that turns the phrase above into concrete actions
+  # CURRENTLY ACADEMY NOT NEEDED. OR PRESENT
+  @inventory.create_item.find_description_field
+  @inventory.create_item.fill_description_field
+  @inventory.create_item.find_serial_field
+  @inventory.create_item.fill_serial_field
 end
 
 And("I click save item") do
-  pending # Write code here that turns the phrase above into concrete actions
+  # CURRENTLY ACADEMY NOT NEEDED
+  # Find and click save item
+  @inventory.create_item.find_save_item_button
+  @inventory.create_item.click_save_item_button
 end
 
 Then("a record is created") do
-  pending # Write code here that turns the phrase above into concrete actions
+  # Back button present to confirm record created
+  @inventory.item_show_page.find_back_button
 end
 
 And("the record is displayed") do
-  pending # Write code here that turns the phrase above into concrete actions
+  # Item successfully created notification
+  # FLAKY TEST!! SHOULD BE ABOVE!
+  @inventory.item_show_page.find_success_notification
 end
 
 And("I am on the checkout item page") do
