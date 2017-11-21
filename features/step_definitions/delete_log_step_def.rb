@@ -19,6 +19,8 @@ When("I click delete") do
 end
 
 When("I click ok on the confirmation") do
+    
+
 
 end
 

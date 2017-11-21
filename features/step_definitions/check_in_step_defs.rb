@@ -1,5 +1,14 @@
 Given("I am on the items page") do
-  pending # Write code here that turns the phrase above into concrete actions
+    login_page.visit_login_page
+    login_page.find_email_field
+    login_page.fill_in_email_field
+    login_page.find_password_field
+    login_page.fill_in_password_field
+    login_page.find_submit_button
+    login_page.click_submit_button
+    sleep 2
+    navbar.click_items_link
+
 end
 
 When("I click check-in for a item") do
