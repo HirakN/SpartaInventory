@@ -7,6 +7,9 @@ I should be able to see which items are overdue in the list of items so that I c
 I expect all items to have a non-empty description
 
 @overdue_items
+
+# Background:
+
 Scenario: View overdue items
   Given that I am on the item list page
   When there are items for where the return date is the same as or earlier than the current date
@@ -27,15 +30,7 @@ Scenario: Assign created items to an academy
   And I save the record
   Then I expect the record to be associated with that academy
 
-@check_in
-Scenario: Check in items from item page
-  Given that I am logged in
-  And I am on the items page
-  When I click check-in for a item
-  And confirm by clicking ok
-  Then the returned to and return date are set
-  And the log appears as returned
-  And I am returned to the logs page
+
 
 @description
 Scenario: All item descriptions should be filled in
