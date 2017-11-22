@@ -58,7 +58,7 @@ end
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
-Cucumber::Rails::Database.javascript_strategy = :truncation
+# Cucumber::Rails::Database.javascript_strategy = :truncation
 
 Capybara::register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, :browser => :chrome)
@@ -68,6 +68,7 @@ Capybara.configure do |config|
   config.ignore_hidden_elements = false
   config.default_max_wait_time = 5
   config.default_driver = :chrome
+  config.app_host = 'http://localhost:3000/'
 end
 
 World(InventoryApp)

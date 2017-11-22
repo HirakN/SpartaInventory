@@ -6,23 +6,24 @@ Given("that I am logged in") do
 end
 
 And("Im on the create new items page") do
+  sleep 5
   navbar.click_items_link
   items_page.click_add_new_item_button
-  sleep 5
 end
 
 When("I leave an empty description") do
+  expect(create_item.find_description_field).to be_empty
   create_item.fill_serial_field
 end
 
-And("I click save item") do
+And("I click save") do
   create_item.click_save_item_button
 end
 
 Then("I see an error message") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(create_item.find_error_div).to eq false
 end
 
 And("no record is created") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(create_item.find_error.text).to eq '1 error prohibited this item from being saved:'
 end
