@@ -3,12 +3,19 @@ require 'capybara/dsl'
 class CreateItem
   include Capybara::DSL
 
-  URL = 'http://localhost:3000/items/new'
+
+  URL = 'http://localhost:3000/'
+  DESCRIPTION ||= '//*[@id="item_description"]'
+  SERIAL_FIELD ||= '//*[@id="item_serial"]'
+  ACADEMY_DROPDOWN ||= '//*[@id="item_academy_id"]'
+  SAVE_ITEM_BUTTON ||= '//*[@id="new_item"]/div[4]/input'
+  ERROR_MESSAGE_DIV ||= '//*[@id="error_explanation"]'
   DESCRIPTION_ID ||= 'item_description'
   SERIAL_FIELD_ID ||= 'item_serial'
   ACADEMIES_DROPDOWN_ID ||= 'item_academy_id'
   SAVE_ITEM_BUTTON ||= 'new_item'
   ERROR_MESSAGE_DIV_ID ||= 'error_explanation'
+
 
   def visit_page
     visit(URL)
