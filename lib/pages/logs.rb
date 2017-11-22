@@ -56,11 +56,11 @@ class Logs
   end
 
   def find_return_date
-    find(:css, RETURN_DATE).text
+    find(:xpath, RETURN_STATUS)
   end
 
   def find_returned_status
-    find(:css, RETURN_STATUS).text
+    find(:xpath, RETURN_STATUS).text
   end
 
 end

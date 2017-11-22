@@ -22,6 +22,5 @@ Feature: Item usage
     And I am on the logs page
     When I click check-in for a log
     And confirm check in by clicking ok
-    Then the returned to and return date for the item are set
-    And the item appears as returned
+    Then the item appears as returned
     And I am returned to the updated logs page
