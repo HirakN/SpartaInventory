@@ -8,12 +8,13 @@ When("I enter an academy name") do
   sleep 3
 end
 
-When("I choose an academy inventory manager from a list of administrators") do
-  pending
-  # This feature does not exist!
-end
+# When("I choose an academy inventory manager from a list of administrators") do
+#   pending
+#   # This feature does not exist!
+# end
 
 When("I submit the data") do
+  new_academy.fill_in_name_field
   new_academy.find_create_academy_button
   new_academy.click_create_academy_button
   sleep 3
@@ -25,7 +26,7 @@ Then("I expect a new academy to be created in the database") do
   sleep 3
 end
 
-Given("that I am on the create/edit item page") do
+Given("that I am on the create and edit item page") do
   login_page.visit_login_page
   login_page.fill_in_email_field
   login_page.fill_in_password_field
@@ -34,8 +35,14 @@ Given("that I am on the create/edit item page") do
 end
 
 When("I select an academy from a list of those available") do
-  create_item.find_academy_dropdown
-  create_item.select_richmond_from_dropdown
+  create_item.visit_page
+  create_item.find_description_field
+  create_item.fill_description_field
+  create_item.find_serial_field
+  create_item.fill_serial_field
+  create_item.academies_dropdown
+  create_item.click_academies_dropdown
+  create_item.choose_location('Leeds')
   sleep 3
 end
 
@@ -46,6 +53,5 @@ When("I save the record") do
 end
 
 Then("I expect the record to be associated with that academy") do
-  pending
-  # This feature does not exist!
+
 end

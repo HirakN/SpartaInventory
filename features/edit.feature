@@ -4,7 +4,7 @@ As a user
 I should be able to edit an Item so that I can make corrections to the item
 
 Scenario: Edit created items
-  Given I am logged in
+  Given I am signed in
   And I am on the edit item page
   When I change the details
   And click save item

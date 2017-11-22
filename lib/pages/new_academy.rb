@@ -3,7 +3,7 @@ require 'capybara/dsl'
 class NewAcademy
   include Capybara::DSL
 
-  NAME_FIELD ||= '//*[@id=“academy_name"]'
+  NAME_FIELD_ID ||= 'academy_name'
   CREATE_ACADEMY_BUTTON ||= '//*[@id=“new_academy"]/div[2]/input'
   BACK_LINK ||= "/html/body/div[2]/div/div/a"
 
@@ -12,7 +12,7 @@ class NewAcademy
   end
 
   def find_name_field
-    find(:xpath, NAME_FIELD)
+    find(:id, NAME_FIELD_ID)
   end
 
   def fill_in_name_field

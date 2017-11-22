@@ -33,7 +33,7 @@ And("I am on the create new items page") do
   create_item.find_description_field
 end
 
-When("I enter in a description and a serial") do
+When("I enter in a description and a valid serial") do
   # CURRENTLY ACADEMY NOT NEEDED. OR PRESENT
   create_item.find_description_field
   create_item.fill_description_field
@@ -83,6 +83,9 @@ And("I am taken to the show log page") do
 end
 
 And("I am on the logs page") do
+#back button is present to show we are on the logs page
+  logs_show_page.find_back_to_logs_button
+  logs_show_page.click_back_to_logs_button
   logs.find_checkout_item_button
 end
 
