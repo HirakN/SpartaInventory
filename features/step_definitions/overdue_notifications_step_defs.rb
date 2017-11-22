@@ -9,7 +9,8 @@ Given("that I have checked out an item") do
 end
 
 And("the item has not been returned") do
-  pending
+  item_show_page.find_success_notification
+  sleep 3
 end
 
 And("that I have set a date for its return") do

@@ -8,11 +8,6 @@ When("I enter an academy name") do
   sleep 3
 end
 
-When("I choose an academy inventory manager from a list of administrators") do
-  pending
-  # This feature does not exist!
-end
-
 When("I submit the data") do
   new_academy.fill_in_name_field
   new_academy.find_create_academy_button

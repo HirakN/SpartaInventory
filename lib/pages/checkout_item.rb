@@ -33,6 +33,15 @@ class CheckoutItem
   end
 
   def click_checkout_button
+    find_checkout_button.click
+  end
+
+  def change_due_date
+    change = click_due_date
+    change.set('4')
+  end
+
+  def click_checkout_button
     button = find_checkout_button
     button.click
   end
