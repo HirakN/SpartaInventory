@@ -31,6 +31,6 @@ Then("the log appears as returned") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then("I am returned to the logs page") do
+Then("I am returned to the log page") do
   pending # Write code here that turns the phrase above into concrete actions
 end
