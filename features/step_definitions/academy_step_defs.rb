@@ -14,6 +14,7 @@ When("I choose an academy inventory manager from a list of administrators") do
 end
 
 When("I submit the data") do
+  new_academy.fill_in_name_field
   new_academy.find_create_academy_button
   new_academy.click_create_academy_button
   sleep 3
