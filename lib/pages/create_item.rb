@@ -6,7 +6,7 @@ class CreateItem
   URL = 'http://localhost:3000/'
   DESCRIPTION ||= '//*[@id=“item_description"]'
   SERIAL_FIELD ||= '*[@id=“item_serial"]'
-  ACADEMY_DROPDOWN ||= '//*[@id=“item_academy_id"]'
+  ACADEMIES_DROPDOWN_ID ||= 'item_academy_id'
   SAVE_ITEM_BUTTON ||= '//*[@id=“new_item"]/div[4]/input'
   ERROR_MESSAGE_DIV_CSS ||= '#error_explanation > h2'
   ITEM_DESCRIPTION_BOX_ID ||= 'item_description'
@@ -20,7 +20,7 @@ class CreateItem
   end
 
   def find_description_field
-    find(:id, DESCRIPTION_ID)
+    find_by_id(DESCRIPTION_ID)
   end
 
   def fill_description_field
