@@ -1,3 +1,5 @@
+# given is wrong. LOG PAGE not items page.
+
 Given("I am on the items page") do
     login_page.visit_login_page
     login_page.find_email_field
@@ -12,7 +14,8 @@ Given("I am on the items page") do
 end
 
 When("I click check-in for a item") do
-  pending # Write code here that turns the phrase above into concrete actions
+
+
 end
 
 When("confirm by clicking ok") do
