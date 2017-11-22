@@ -1,9 +1,8 @@
 And("I am on the items page") do
   logs.click_checkout_item_button
-    sleep 5
   checkout_item.click_checkout_button
   navbar.click_items_link
-
+  sleep 5
 end
 
 When("I click check-in for a item") do
@@ -16,14 +15,16 @@ And("confirm by clicking ok") do
 end
 
 Then("the returned to and return date are set") do
-  expect(items_page.find_return_date)
-  expect(items_page.find_due_date)
+  sleep 5
+  expect(logs.find_return_date).to eq Date.today.strftime('%Y-%m-%d')
+  expect(logs.find_returned_to).to eq 'Test Test'
 end
 
 And("the log appears as returned") do
-  logs_show_page.url
+  expect(logs.find_returned_status).to eq "Returned"
 end
 
 And("I am returned to the logs page") do
-  logs_show_page.click_back_to_Logs_button
+  sleep 5
+  expect(current_url).to eq 'http://localhost:3000/logs'
 end

@@ -7,9 +7,10 @@ class Logs
   CHECK_IN_LINK ||= "/html/body/div[2]/div/div/table/tbody/tr[1]/td[7]/a"
   DELETE_LINK ||= "html/body/div[2]/div/div/table/tbody/tr/td[8]/a"
   CHECKOUT_ITEM_HEADING ||= "/html/body/div[2]/div/div/h1"
-  RETURN_DATE ||= "/html/body/div[2]/div/div/table/tbody/tr/td[5]"
+  RETURN_DATE ||= "body > div:nth-child(3) > div > div > table > tbody > tr:nth-child(1) > td:nth-child(5)"
   RETURN_STATUS ||= "/html/body/div[2]/div/div/table/tbody/tr[1]/td[7]"
   MAC_LOG ||= "/html/body/div[2]/div/div/table/tbody"
+  RETURNED_TO_CSS ||= 'body > div:nth-child(3) > div > div > table > tbody > tr:nth-child(1) > td:nth-child(4)'
 
   def visit_logs_page
     visit('/logs')
@@ -56,7 +57,11 @@ class Logs
   end
 
   def find_return_date
-    find(:xpath, RETURN_STATUS)
+    find(:css, RETURN_DATE).text
+  end
+
+  def find_returned_to
+    find(:css, RETURNED_TO_CSS).text
   end
 
   def find_returned_status

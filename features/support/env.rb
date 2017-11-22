@@ -8,6 +8,7 @@ require 'cucumber/rails'
 require 'capybara/cucumber'
 require_relative '../../lib/inventory_object_model'
 require 'selenium-webdriver'
+require 'date'
 
 Capybara.server = :puma
 # Capybara defaults to CSS3 selectors rather than XPath.
