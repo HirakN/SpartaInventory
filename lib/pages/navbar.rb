@@ -3,7 +3,7 @@ require 'capybara/dsl'
 class Navbar
   include Capybara::DSL
 
-  URL ||= "http://development.local:3000/"
+  URL ||= 'http://localhost:3000/'
   SPARTA_GLOBAL_LINK ||= "/html/body/nav/div/a"
   ITEMS_NAVBAR_LINK ||= "/html/body/nav/ul[1]/li[1]/a"
   LOGS_NAVBAR_LINK ||= "/html/body/nav/ul[1]/li[2]/a"
