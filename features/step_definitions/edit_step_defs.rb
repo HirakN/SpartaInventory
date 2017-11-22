@@ -21,9 +21,9 @@ And("click save item") do
 end
 
 Then("I am taken to the show page for the item") do
-  # expect()
+  expect(current_url).to eq 'http://localhost:3000/items/1'
 end
 
 And("the item details are changed in the database") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(edit_items.header_css.text).to eq 'This is the new information'
 end

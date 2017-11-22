@@ -46,4 +46,8 @@ class EditItem
   def click_save_button
     find_save_button_xpath.click
   end
+
+  def header_css
+    find(:css, HEADING_SELECTOR)
+  end
 end
