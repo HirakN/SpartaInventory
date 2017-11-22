@@ -47,6 +47,17 @@ And("an error message is displayed") do
   #  NO ERROR MESSAGE APPEARS. DELETE
 end
 
+Given("I am already logged in") do
+  #  Go through the process of logging in
+  login_page.visit_login_page
+  login_page.find_email_field
+  login_page.fill_in_email_field
+  login_page.find_password_field
+  login_page.fill_in_password_field
+  login_page.find_submit_button
+  login_page.click_submit_button
+end
+
 When("I click the logout button") do
   # Find and click logout
   navbar.find_logout_navbar_link
