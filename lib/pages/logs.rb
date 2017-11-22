@@ -5,7 +5,7 @@ class Logs
 
   CHECKOUT_ITEM_BUTTON ||= "html/body/div[2]/div/div/a"
   CHECK_IN_LINK ||= "/html/body/div[2]/div/div/table/tbody/tr[1]/td[7]/a"
-  DELETE_LINK ||= "html/body/div[2]/div/div/table/tbody/tr/td[8]/a"
+  DELETE_LINK ||= "/html/body/div[2]/div/div/table/tbody/tr[1]/td[8]/a"
   CHECKOUT_ITEM_HEADING ||= "/html/body/div[2]/div/div/h1"
   RETURN_DATE ||= "/html/body/div[2]/div/div/table/tbody/tr/td[5]"
   RETURN_STATUS ||= "/html/body/div[2]/div/div/table/tbody/tr[1]/td[7]"
