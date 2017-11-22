@@ -1,11 +1,12 @@
 Feature: Item usage
-@createitem
+  @item_view
   Scenario: As a user I should be able to see the items
     Given I enter valid email and password to login
     When I click on the items link
     Then I am taken to the items page
     And I can see all of the items in the database
 
+  @item_checkout
   Scenario: As a user I should be able to checkout an item so that I can keep a record of all of the people who hold items
     Given I am already logged in
     And I am on the checkout item page
@@ -14,6 +15,7 @@ Feature: Item usage
     Then a log is created
     And I am taken to the show log page
 
+  @item_check
   Scenario: As a user I should be able to check in an item so that I can keep a record of returned items
     Given I am already logged in
     And I am on the logs page

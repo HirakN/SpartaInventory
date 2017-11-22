@@ -94,16 +94,18 @@ end
 
 And("confirm by clicking ok") do
   # NOT POSSIBLE FOR AN ALERT??
+  pending
 end
 
 Then("the returned to and return date are set") do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
 end
 
 And("the log appears as returned") do
-  pending # Write code here that turns the phrase above into concrete actions
+  logs_show_page.visit_page
 end
 
 And("I am returned to the logs page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  logs_show_page.find_back_to_logs_button
+  logs_show_page.click_back_to_Logs_button
 end
