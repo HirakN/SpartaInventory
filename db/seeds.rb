@@ -130,12 +130,26 @@ require 'date'
 date = Date.today.strftime('%d-%m-%Y')
 
 
+def days_ahead(number_of_days_ahead)
+  d = Date.today
+  (d+number_of_days_ahead).strftime('%d-%m-%Y')
+end
+
+def days_behind(number_of_days_behind)
+  d = Date.today
+  (d-number_of_days_behind).strftime('%d-%m-%Y')
+end
+
+
+
  item = Item.create({description:'Macbook 2010', serial:'DFRUY3TGV333', academy_id:'Richmond', created_at: "#{date}", updated_at: "#{date}"})
  item1 = Item.create({description:'Macbook 2011', serial:'LOPUY3TG111', academy_id:'Leeds', created_at: "#{date}", updated_at: "#{date}"})
  item2 = Item.create({description:'Macbook 2012', serial:'GHTJUY90K000', academy_id:'Birmingham', created_at: "#{date}", updated_at: "#{date}"})
  item3 = Item.create({description:'Macbook 2013', serial:'ASDJUY90K777', academy_id:'Richmond', created_at: "#{date}", updated_at: "#{date}"})
 
-Log.create({lender_id: 'Jake', borrower_id: 'Joe', returned_to_id: 'Jake', return_date: "#{date}", notes: 'Hello World', created_at: "#{date}", item_id: '1', due_date: "#{date.to_i + 7}"})
+Log.create({lender_id: 'Jake', borrower_id: 'Joe', returned_to_id: 'Jake', return_date: "#{date}", notes: 'Hello World', created_at: "#{date}", item_id: '1', due_date: "#{days_ahead(7)}"})
+
+Log.create({lender_id: 'dave', borrower_id: 'peter', returned_to_id: 'Jake', return_date: "#{date}", notes: 'Hello World', created_at: "#{date}", item_id: '2', due_date: "#{days_behind(7)}"})
 
 Academy.create({name: 'Richmond'})
 Academy.create({name: 'Birmingham'})

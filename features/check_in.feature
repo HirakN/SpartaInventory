@@ -10,4 +10,4 @@ Scenario: Check in items from item page
   And confirm by clicking ok
   Then the returned to and return date are set
   And the log appears as returned
-  And I am returned to the logs page
+  And I am returned to the log page

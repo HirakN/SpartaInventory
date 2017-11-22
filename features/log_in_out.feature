@@ -1,3 +1,4 @@
+@loginFeature
 Feature: The Login function
 
   Scenario: I am able to log in and access restricted resources

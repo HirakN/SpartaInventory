@@ -1,3 +1,4 @@
+@itemUsage
 Feature: Item usage
   @item_view
   Scenario: As a user I should be able to see the items
@@ -20,7 +21,6 @@ Feature: Item usage
     Given I am already logged in
     And I am on the logs page
     When I click check-in for a log
-    And confirm by clicking ok
-    Then the returned to and return date are set
-    And the log appears as returned
-    And I am returned to the logs page
+    And confirm check in by clicking ok
+    Then the item appears as returned
+    And I am returned to the updated logs page

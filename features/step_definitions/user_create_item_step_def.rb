@@ -17,6 +17,7 @@ end
 
 Then("I am taken to the items page") do
   # Confirm landing on item page by "add new item" button presence
+  items_page.find_item_id_text
   items_page.find_add_new_item_button
 end
 
@@ -61,20 +62,16 @@ When("I click check-in for a log") do
   logs.click_check_in_link
 end
 
-And("confirm by clicking ok") do
-  # NOT POSSIBLE FOR AN ALERT??
-  pending
+And("confirm check in by clicking ok") do
+  logs.confirm_ok_on_alert
+  sleep 3
 end
 
-Then("the returned to and return date are set") do
-  pending
+Then("the item appears as returned") do
+  expect(logs.find_returned_status).to eq "Returned"
 end
 
-And("the log appears as returned") do
-  logs_show_page.visit_page
-end
-
-And("I am returned to the logs page") do
+And("I am returned to the updated logs page") do
   logs_show_page.find_back_to_logs_button
-  logs_show_page.click_back_to_Logs_button
+  logs_show_page.click_back_to_logs_button
 end

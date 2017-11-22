@@ -11,18 +11,19 @@ And("I am on the edit item page") do
 end
 
 When("I change the details") do
-
-  pending # Write code here that turns the phrase above into concrete actions
+  edit_items.fill_in_description_box
+  edit_items.fill_in_item_serial
+  edit_items.choose_location('Leeds')
 end
 
 And("click save item") do
-  pending # Write code here that turns the phrase above into concrete actions
+  edit_items.click_save_button
 end
 
 Then("I am taken to the show page for the item") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(current_url).to eq 'http://localhost:3000/items/1'
 end
 
 And("the item details are changed in the database") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(edit_items.header_css.text).to eq 'This is the new information'
 end
