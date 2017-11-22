@@ -5,10 +5,13 @@ class CreateItem
 
   URL = 'http://localhost:3000/'
   DESCRIPTION ||= '//*[@id=“item_description"]'
-  SERIAL_FIELD ||= '//*[@id=“item_serial"]'
+  SERIAL_FIELD ||= '*[@id=“item_serial"]'
   ACADEMY_DROPDOWN ||= '//*[@id=“item_academy_id"]'
   SAVE_ITEM_BUTTON ||= '//*[@id=“new_item"]/div[4]/input'
-  ERROR_MESSAGE_DIV ||= '//*[@id="error_explanation"]'
+  ERROR_MESSAGE_DIV_CSS ||= '#error_explanation > h2'
+  ITEM_DESCRIPTION_BOX_ID ||= 'item_description'
+  SERIAL_FIELD_ID ||= 'item_serial'
+  SAVE_BUTTON_CSS ||= '#new_item > div:nth-child(6) > input'
 
   def visit_page
     visit(URL)
@@ -24,7 +27,7 @@ class CreateItem
   end
 
   def find_serial_field
-    find(:xpath, SERIAL_FIELD)
+    find(:id, SERIAL_FIELD_ID)
   end
 
   def fill_serial_field
@@ -42,7 +45,7 @@ class CreateItem
   end
 
   def find_save_item_button
-    find(:xpath, SAVE_ITEM_BUTTON)
+    find(:css, SAVE_BUTTON_CSS)
   end
 
   def click_save_item_button
@@ -50,7 +53,14 @@ class CreateItem
   end
 
   def find_error_div
-    find(:xpath, ERROR_MESSAGE_DIV)
+    find(:css, ERROR_MESSAGE_DIV_CSS)
   end
 
+  def find_error_div_text
+    find_error_div.text
+  end
+
+  def find_item_description_box_id
+    find(:id, ITEM_DESCRIPTION_BOX_ID)
+  end
 end

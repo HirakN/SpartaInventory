@@ -9,6 +9,7 @@ require_relative 'pages/logs_show_page.rb'
 require_relative 'pages/logs.rb'
 require_relative 'pages/navbar.rb'
 require_relative 'pages/new_academy.rb'
+require_relative 'pages/edit_page.rb'
 
 module InventoryApp
 # this is the module. This will contain methods that contain methods that navigate the pages.
@@ -51,6 +52,10 @@ module InventoryApp
 
     def new_academy
       NewAcademy.new
+    end
+
+    def edit_items
+      EditItem.new
     end
 
 end
