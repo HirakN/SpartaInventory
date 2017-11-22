@@ -32,7 +32,7 @@ And("I am on the create new items page") do
   create_item.find_description_field
 end
 
-When("I enter in a description and a serial") do
+When("I enter in a description and a valid serial") do
   # CURRENTLY ACADEMY NOT NEEDED. OR PRESENT
   create_item.find_description_field
   create_item.fill_description_field

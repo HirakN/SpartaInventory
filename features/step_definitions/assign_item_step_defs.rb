@@ -15,23 +15,25 @@ Given("I am on the create new items options page") do
 end
 
 And("I click on add item button") do
+  items_page.find_add_new_item_button
   items_page.click_add_new_item_button
 end
 
-When("I enter in a description and a serial") do
+When("I enter in a description and a serial number") do
   create_item.fill_description_field
   create_item.fill_serial_field
 end
 
-And("I click save item") do
+And("I click save item button") do
+  create_item.find_save_item_button
   create_item.click_save_item_button
 end
 
-Then("a record is created") do
+Then("a single record is created") do
   item_show_page.find_success_notification
 end
 #checks if the notification is present as well as the back button
-And("the record is displayed") do
+And("the single record is displayed") do
   item_show_page.find_success_notification
   item_show_page.find_back_button
 end
