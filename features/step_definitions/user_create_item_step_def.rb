@@ -98,15 +98,11 @@ And("confirm check in by clicking ok") do
   sleep 3
 end
 
-Then("the returned to and return date for the item are set") do
-  logs.find_return_date
-end
-
-And("the item appears as returned") do
+Then("the item appears as returned") do
   expect(logs.find_returned_status).to eq "Returned"
 end
 
 And("I am returned to the updated logs page") do
   logs_show_page.find_back_to_logs_button
-  logs_show_page.click_back_to_Logs_button
+  logs_show_page.click_back_to_logs_button
 end
