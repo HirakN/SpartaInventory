@@ -11,9 +11,7 @@ end
 #checks if the Item link is on the page and clicks it
 Given("I am on the create new items options page") do
   navbar.find_items_link
-  sleep 5
   navbar.click_items_link
-  sleep 5
 end
 
 And("I click on add item button") do
