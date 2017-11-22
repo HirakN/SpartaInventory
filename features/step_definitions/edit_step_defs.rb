@@ -7,7 +7,7 @@ end
 
 And("I am on the edit item page") do
   navbar.click_items_link
-  items_page.
+  items_page
 end
 
 When("I change the details") do
