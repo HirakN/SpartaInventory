@@ -13,7 +13,8 @@ When("there are items for where the return date is the same as or earlier than t
 end
 
 Then("the return date will be coloured red in the list") do
-  pending # Write code here that turns the phrase above into concrete actions
+  item_show_page.find_due_date
+  sleep 3
 end
 
 Given("that I am on the items page") do

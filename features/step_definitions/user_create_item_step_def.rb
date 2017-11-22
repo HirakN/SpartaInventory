@@ -89,13 +89,8 @@ When("I click check-in for a log") do
   logs.click_check_in_link
 end
 
-And("confirm by clicking ok") do
-  # NOT POSSIBLE FOR AN ALERT??
-  pending
-end
-
 Then("the returned to and return date are set") do
-  pending
+  item_show_page.find_due_date
 end
 
 And("the log appears as returned") do
