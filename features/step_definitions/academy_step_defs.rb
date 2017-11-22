@@ -8,10 +8,10 @@ When("I enter an academy name") do
   sleep 3
 end
 
-# When("I choose an academy inventory manager from a list of administrators") do
-#   pending
-#   # This feature does not exist!
-# end
+When("I choose an academy inventory manager from a list of administrators") do
+  pending
+  # This feature does not exist!
+end
 
 When("I submit the data") do
   new_academy.fill_in_name_field
@@ -35,7 +35,8 @@ Given("that I am on the create and edit item page") do
 end
 
 When("I select an academy from a list of those available") do
-  create_item.visit_page
+  navbar.click_items_link
+  items_page.click_add_new_item_button
   create_item.find_description_field
   create_item.fill_description_field
   create_item.find_serial_field
