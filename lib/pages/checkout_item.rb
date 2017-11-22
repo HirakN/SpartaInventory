@@ -6,11 +6,11 @@ class CheckoutItem
 
   URL ||= 'http://localhost:3000/'
   CHOOSE_ITEM ||= '/html/body/div[2]/div/div/form/div[1]/select'
-  BORROWER ||= '/html/body/div[2]/div/div/form/div[2]/select'
+  BORROWER ||= '/html/body/div[2]/div/div/form/div[1]/select'
   DUE_DATE ||= '/html/body/div[2]/div/div/form/div[3]/input'
   CHECKOUT ||= '/html/body/div[2]/div/div/form/div[4]/input'
   MAC_2 ||= '/html/body/div[2]/div/div/form/div[1]/select/option[2]'
-  BORROWER ||= '/html/body/div[2]/div/div/form/div[2]/select/option[21]'
+  SELECT_BORROWER ||= '/html/body/div[2]/div/div/form/div[1]/select/option[1]'
 
   def visit_page
     visit(URL)
@@ -20,8 +20,8 @@ class CheckoutItem
     find(:xpath, CHOOSE_ITEM)
   end
 
-  def find_burrower
-    find(:xpath, BURROWER)
+  def find_borrower
+    find(:xpath, BORROWER)
   end
 
   def find_due_date
@@ -42,6 +42,6 @@ class CheckoutItem
   end
 
   def choose_borrower
-    find(:xpath, BORROWER).click
+    find(:xpath, SELECT_BORROWER).click
   end
 end

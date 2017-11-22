@@ -10,6 +10,8 @@ class CreateItem
   SAVE_ITEM_BUTTON ||= '//*[@id=“new_item"]/div[4]/input'
   ERROR_MESSAGE_DIV_CSS ||= '#error_explanation > h2'
   ITEM_DESCRIPTION_BOX_ID ||= 'item_description'
+  ERROR_MESSAGE_DIV ||= '//*[@id="error_explanation"]'
+  DESCRIPTION_ID ||= 'item_description'
   SERIAL_FIELD_ID ||= 'item_serial'
   SAVE_BUTTON_CSS ||= '#new_item > div:nth-child(6) > input'
 
