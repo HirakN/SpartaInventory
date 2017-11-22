@@ -51,17 +51,16 @@ class Logs
     page.driver.browser.switch_to.alert.accept
   end
 
-<<<<<<< HEAD
   def find_mac_log
     find(:xpath, MAC_LOG)
-=======
+  end
+
   def find_return_date
     find(:css, RETURN_DATE).text
   end
 
   def find_returned_status
     find(:css, RETURN_STATUS).text
->>>>>>> sdet11
   end
 
 end

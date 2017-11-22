@@ -5,8 +5,8 @@ I should be able to delete a log so that if I make a mistake I can remove an inc
 @delete_log
 Scenario: Delete a log
   Given I am logged in as a user
-  And I am on the page logs
+  And I am on the logs page
   When I click delete
   And I click ok on the confirmation
   Then the log is removed from the database
-  And I am returned to the page logs
+  And I am returned to the logs page

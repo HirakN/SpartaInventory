@@ -9,24 +9,17 @@ Given("I am logged in as a user") do
     sleep 2
 end
 
-Given("I am on the page logs") do
+When("I click delete") do
     navbar.click_logs_link
     sleep 2
-end
-
-When("I click delete") do
     logs.click_delete_link
     sleep 2
 end
 
-When("I click ok on the confirmation") do
+And("I click ok on the confirmation") do
     logs.confirm_deletion_on_alert
 end
 
 Then("the log is removed from the database") do
     expect(logs.find_mac_log).to_not have_selector('td')
-end
-
-Then("I am returned to the page logs") do
-    expect(logs.find_checkout_item_button).display
 end
