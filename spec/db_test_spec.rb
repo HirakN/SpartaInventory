@@ -10,6 +10,6 @@ describe 'Verifying the seed data' do
   end
 
   it 'should have the model value of Macbook2010' do
-    # expect(Item.first.item_model).to eq("Macbook2010")
+    expect(Item.first["description"]).to eq("Macbook2010")
   end
 end
