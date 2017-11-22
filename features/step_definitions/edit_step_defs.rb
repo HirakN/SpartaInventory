@@ -1,4 +1,4 @@
-Given("I am logged in") do
+Given("I am signed in") do
   login_page.visit_login_page
   login_page.fill_in_email_field
   login_page.fill_in_password_field
@@ -7,7 +7,7 @@ end
 
 And("I am on the edit item page") do
   navbar.click_items_link
-  items_page
+  items_page.click_edit_item
 end
 
 When("I change the details") do
