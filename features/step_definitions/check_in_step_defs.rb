@@ -1,24 +1,29 @@
-Given("I am on the items page") do
-  pending # Write code here that turns the phrase above into concrete actions
+And("I am on the items page") do
+  logs.click_checkout_item_button
+    sleep 5
+  checkout_item.click_checkout_button
+  navbar.click_items_link
+
 end
 
 When("I click check-in for a item") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(current_url).to eq 'http://localhost:3000/items'
+  items_page.click_item_check_in
 end
 
-When("confirm by clicking ok") do
-
-  pending # Write code here that turns the phrase above into concrete actions
+And("confirm by clicking ok") do
+  items_page.confirm_alert
 end
 
 Then("the returned to and return date are set") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(items_page.find_return_date)
+  expect(items_page.find_due_date)
 end
 
-Then("the log appears as returned") do
-  pending # Write code here that turns the phrase above into concrete actions
+And("the log appears as returned") do
+  logs_show_page.url
 end
 
-Then("I am returned to the logs page") do
-  pending # Write code here that turns the phrase above into concrete actions
+And("I am returned to the logs page") do
+  logs_show_page.click_back_to_Logs_button
 end

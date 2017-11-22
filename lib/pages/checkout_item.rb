@@ -7,7 +7,7 @@ class CheckoutItem
   URL ||= 'http://localhost:3000/'
   CHOOSE_ITEM ||= '/html/body/div[2]/div/div/form/div[1]/select'
   BORROWER ||= '/html/body/div[2]/div/div/form/div[2]/select'
-  DUE_DATE ||= '/html/body/div[2]/div/div/form/div[3]/input'
+  DUE_DATE ||= '//html/body/div[2]/div/div/form/div[3]/input'
   CHECKOUT ||= '/html/body/div[2]/div/div/form/div[4]/input'
   MAC_2 ||= '/html/body/div[2]/div/div/form/div[1]/select/option[2]'
   BORROWER ||= '/html/body/div[2]/div/div/form/div[2]/select/option[21]'
@@ -30,6 +30,15 @@ class CheckoutItem
 
   def find_checkout_button
     find(:xpath, CHECKOUT)
+  end
+
+  def click_checkout_button
+    find_checkout_button.click
+  end
+
+  def change_due_date
+    change = click_due_date
+    change.set('4')
   end
 
   def click_checkout_button

@@ -4,7 +4,7 @@ class Logs
   include Capybara::DSL
 
   CHECKOUT_ITEM_BUTTON ||= "html/body/div[2]/div/div/a"
-  CHECK_IN_LINK ||= "/html/body/div[2]/div/div/table/tbody/tr/td[7]/a"
+  CHECK_IN_LINK ||= "Check in"
   DELETE_LINK ||= "html/body/div[2]/div/div/table/tbody/tr/td[8]/a"
   CHECKOUT_ITEM_HEADING ||= "/html/body/div[2]/div/div/h1"
 
@@ -25,7 +25,7 @@ class Logs
   end
 
   def find_check_in_link
-    find(:xpath, CHECK_IN_LINK)
+    find_link(CHECK_IN_LINK)
   end
 
   def click_check_in_link
