@@ -17,45 +17,13 @@ end
 
 Then("I am taken to the items page") do
   # Confirm landing on item page by "add new item" button presence
+  items_page.find_item_id_text
   items_page.find_add_new_item_button
 end
 
 And("I can see all of the items in the database") do
   #  Confirm the columns for all items there
   items_page.find_item_id_text
-end
-
-And("I am on the create new items page") do
-  # Click the add new item button and check landing
-  items_page.find_add_new_item_button
-  items_page.click_add_new_item_button
-  create_item.find_description_field
-end
-
-When("I enter in a description and a serial") do
-  # CURRENTLY ACADEMY NOT NEEDED. OR PRESENT
-  create_item.find_description_field
-  create_item.fill_description_field
-  create_item.find_serial_field
-  create_item.fill_serial_field
-end
-
-And("I click save item") do
-  # CURRENTLY ACADEMY NOT NEEDED
-  # Find and click save item
-  create_item.find_save_item_button
-  create_item.click_save_item_button
-end
-
-Then("a record is created") do
-  # Back button present to confirm record created
-  item_show_page.find_back_button
-end
-
-And("the record is displayed") do
-  # Item successfully created notification
-  # FLAKY TEST!! SHOULD BE ABOVE!
-  item_show_page.find_success_notification
 end
 
 And("I am on the checkout item page") do
@@ -81,7 +49,12 @@ And("I am taken to the show log page") do
   item_show_page.find_back_button
 end
 
+
+#Item_check
 And("I am on the logs page") do
+#back button is present to show we are on the logs page
+  logs_show_page.find_back_to_logs_button
+  logs_show_page.click_back_to_logs_button
   logs.find_checkout_item_button
 end
 
@@ -89,15 +62,16 @@ When("I click check-in for a log") do
   logs.click_check_in_link
 end
 
-Then("the returned to and return date are set") do
-  item_show_page.find_due_date
+And("confirm check in by clicking ok") do
+  logs.confirm_ok_on_alert
+  sleep 3
 end
 
-And("the log appears as returned") do
-  logs_show_page.visit_page
+Then("the item appears as returned") do
+  expect(logs.find_returned_status).to eq "Returned"
 end
 
-And("I am returned to the logs page") do
+And("I am returned to the updated logs page") do
   logs_show_page.find_back_to_logs_button
-  logs_show_page.click_back_to_Logs_button
+  logs_show_page.click_back_to_logs_button
 end

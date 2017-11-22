@@ -3,11 +3,11 @@ require 'capybara/dsl'
 class EditItem
   include Capybara::DSL
 
-  DESCRIPTION_BOX_ID ||= '#item_description'
-  ITEM_SERIAL_ID ||= '#item_serial'
+  DESCRIPTION_BOX_ID ||= 'item_description'
+  ITEM_SERIAL_ID ||= 'item_serial'
+  ACADEMIES_DROPDOWN_ID ||= 'item_academy_id'
   SAVE_ITEM_BUTTON_XPATH ||= '//*[@id="edit_item_1"]/div[4]/input'
-  ACADEMY_DROPDOWN_ID ||= 'item_academy_id'
-
+  HEADING_SELECTOR ||= 'body > div:nth-child(3) > div > div > h1'
 
   def find_description_box
     find(:id, DESCRIPTION_BOX_ID)
@@ -23,15 +23,31 @@ class EditItem
   end
 
   def fill_in_item_serial
-    
+    serial = find_serial_field
+    serial.set('TYVBSG12IR34')
   end
 
-  def find_academy_dropdown
-    find(:xpath, ACADEMY_DROPDOWN_ID)
+  def academies_dropdown
+    find_by_id(ACADEMIES_DROPDOWN_ID)
   end
 
-  def select_richmond_from_dropdown
-    dropdown = find_academy_dropdown
-    select "Leeds", :from => dropdown
+  def click_academies_dropdown
+    academies_dropdown.click
+  end
+
+  def choose_location(location)
+    click_academies_dropdown.select(location)
+  end
+
+  def find_save_button_xpath
+    find(:xpath, SAVE_ITEM_BUTTON_XPATH)
+  end
+
+  def click_save_button
+    find_save_button_xpath.click
+  end
+
+  def header_css
+    find(:css, HEADING_SELECTOR)
   end
 end

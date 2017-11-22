@@ -6,13 +6,12 @@ Given("that I am logged in") do
 end
 
 And("Im on the create new items page") do
-  sleep 5
   navbar.click_items_link
   items_page.click_add_new_item_button
 end
 
 When("I leave an empty description") do
-  expect(create_item.find_description_field).to be_empty
+  expect(create_item.find_item_description_box_id.text).to eq ''
   create_item.fill_serial_field
 end
 
@@ -21,9 +20,9 @@ And("I click save") do
 end
 
 Then("I see an error message") do
-  expect(create_item.find_error_div).to eq false
+  expect(create_item.find_error_div_text).to eq '1 error prohibited this item from being saved:'
 end
 
 And("no record is created") do
-  expect(create_item.find_error.text).to eq '1 error prohibited this item from being saved:'
+  expect(current_url).to eq 'http://localhost:3000/items'
 end

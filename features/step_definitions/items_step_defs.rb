@@ -3,7 +3,7 @@ Given("that I am on the item list page") do
   login_page.fill_in_email_field
   login_page.fill_in_password_field
   login_page.click_submit_button
-  items.url
+  items_page.url
   sleep 3
 end
 
@@ -22,7 +22,7 @@ Given("that I am on the items page") do
   login_page.fill_in_email_field
   login_page.fill_in_password_field
   login_page.click_submit_button
-  items.url
+  items_page.url
   sleep 3
 end
 

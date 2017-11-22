@@ -5,7 +5,7 @@ class Item
   include Capybara::DSL
 
   URL ||= 'http://localhost:3000/'
-  ADD_NEW_ITEM_BUTTON ||= '//*[@id=“items”]/div/div/a'
+  ADD_NEW_ITEM_BUTTON ||= '//*[@id="items"]/div/div/a'
   DESCRIPTION_LINK ||= '//*[@id=“items"]/div/div/table/tbody/tr/td[2]/a'
   ITEM_EDIT_XPATH ||= '//*[@id="items"]/div/div/table/tbody/tr[1]/td[2]/a'
   DELETE_ITEM_LINK ||= '//*[@id="items"]/div/div/table/tbody/tr/td[5]/a’'
