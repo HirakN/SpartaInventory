@@ -25,39 +25,6 @@ And("I can see all of the items in the database") do
   items_page.find_item_id_text
 end
 
-And("I am on the create new items page") do
-  # Click the add new item button and check landing
-  items_page.find_add_new_item_button
-  items_page.click_add_new_item_button
-  create_item.find_description_field
-end
-
-When("I enter in a description and a valid serial") do
-  # CURRENTLY ACADEMY NOT NEEDED. OR PRESENT
-  create_item.find_description_field
-  create_item.fill_description_field
-  create_item.find_serial_field
-  create_item.fill_serial_field
-end
-
-And("I click save item") do
-  # CURRENTLY ACADEMY NOT NEEDED
-  # Find and click save item
-  create_item.find_save_item_button
-  create_item.click_save_item_button
-end
-
-Then("a record is created") do
-  # Back button present to confirm record created
-  item_show_page.find_back_button
-end
-
-And("the record is displayed") do
-  # Item successfully created notification
-  # FLAKY TEST!! SHOULD BE ABOVE!
-  item_show_page.find_success_notification
-end
-
 And("I am on the checkout item page") do
   # Check the check out button is present
   navbar.click_checkout_link
@@ -81,6 +48,8 @@ And("I am taken to the show log page") do
   item_show_page.find_back_button
 end
 
+
+#Item_check
 And("I am on the logs page") do
 #back button is present to show we are on the logs page
   logs_show_page.find_back_to_logs_button
