@@ -18,7 +18,7 @@ class CreateItem
   end
 
   def find_description_field
-    find(:xpath, DESCRIPTION)
+    find(:id, DESCRIPTION_ID)
   end
 
   def fill_description_field
@@ -35,14 +35,17 @@ class CreateItem
     serial.set('P002')
   end
 
-  def find_academy_dropdown
-    find(:xpath, ACADEMY_DROPDOWN)
-  end
+  def academies_dropdown
+   find_by_id(ACADEMIES_DROPDOWN_ID)
+ end
 
-  def select_richmond_from_dropdown
-    dropdown = find_academy_dropdown
-    select "Richmond", :from => dropdown
-  end
+ def click_academies_dropdown
+   academies_dropdown.click
+ end
+
+ def choose_location(location)
+   click_academies_dropdown.select(location)
+ end
 
   def find_save_item_button
     find(:css, SAVE_BUTTON_CSS)
