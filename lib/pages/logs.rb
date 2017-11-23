@@ -3,9 +3,9 @@ require 'capybara/dsl'
 class Logs
   include Capybara::DSL
 
-  CHECKOUT_ITEM_BUTTON ||= "html/body/div[2]/div/div/a"
+  CHECKOUT_ITEM_BUTTON_SELECTOR ||= "body > div:nth-child(3) > div > div > a"
   CHECK_IN_LINK ||= "/html/body/div[2]/div/div/table/tbody/tr[1]/td[7]/a"
-  DELETE_LINK ||= "/html/body/div[2]/div/div/table/tbody/tr[1]/td[8]/a"
+  DELETE_LINK_CSS ||= "body > div:nth-child(3) > div > div > table > tbody > tr:nth-child(3) > td:nth-child(8) > a"
   CHECKOUT_ITEM_HEADING ||= "/html/body/div[2]/div/div/h1"
   RETURN_DATE ||= "body > div:nth-child(3) > div > div > table > tbody > tr:nth-child(1) > td:nth-child(5)"
   RETURN_STATUS ||= "/html/body/div[2]/div/div/table/tbody/tr[1]/td[7]"
@@ -17,7 +17,7 @@ class Logs
   end
 
   def find_checkout_item_button
-    find(:xpath, CHECKOUT_ITEM_BUTTON)
+    find(:css, CHECKOUT_ITEM_BUTTON_SELECTOR)
   end
 
   def click_checkout_item_button
@@ -41,7 +41,7 @@ class Logs
   end
 
   def find_delete_link
-    find(:xpath, DELETE_LINK)
+    find(:css, DELETE_LINK_CSS)
   end
 
   def click_delete_link
