@@ -7,6 +7,7 @@ end
 
 When("I click check-in for a item") do
   expect(current_url).to eq 'http://localhost:3000/items'
+  sleep 5
   items_page.click_item_check_in
 end
 
