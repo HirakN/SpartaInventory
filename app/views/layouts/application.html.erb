@@ -19,11 +19,15 @@
         <ul class="nav navbar-nav">
           <li><a href="<%= items_path %>">Items</a></li>
           <li><a href="<%= logs_path %>">Logs</a></li>
+          <li><a href="<%= suppliers_path %>">Suppliers</a></li>
           <li><a href="<%= new_log_path %>">Checkout Item</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <% if current_user %>
+            <!-- move % if current_user %> back here-->
             <li><a href="<%=academies_new_path%>">New Academy</a></li>
+            <!-- <li><a href="<%=new_supplier_path%>">New Supplier</a></li> -->
+            <!-- Remove line below -->
+            <% if current_user %>
             <li><a href="#">Welcome , <%= current_user.name %></a></li>
             <li><a href="<%= logout_path %>">Logout</a></li>
           <% else %>

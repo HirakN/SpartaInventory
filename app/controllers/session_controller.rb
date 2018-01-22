@@ -26,7 +26,7 @@ class SessionController < ApplicationController
       session[:user] = auth['user']
 
       # redirect
-      redirect_to logs_path
+      redirect_to items_path
     else
       redirect_to login_path
     end
