@@ -24,7 +24,6 @@ default: &default
 development:
   <<: *default
   database: inventory_development
-  
 
 
   # The specified database role being used to connect to postgres.
