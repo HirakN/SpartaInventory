@@ -24,12 +24,6 @@ default: &default
 development:
   <<: *default
   database: inventory_development
-  # adapter: postgresql
-  # host: 127.0.0.1
-  # username: postgres
-  # password: 'password'
-  # encoding: unicode
-  # pool: 5
 
 
   # The specified database role being used to connect to postgres.
