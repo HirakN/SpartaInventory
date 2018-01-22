@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :suppliers, only: [:index, :create, :new, :edit, :update, :destroy]
   resources :users
 
   resources :logs

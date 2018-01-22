@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :check_login
+  #before_action :check_login
 
   # GET /items
   # GET /items.json
@@ -29,19 +29,23 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    @suppliers = Supplier.all
     @academies = Academy.all
   end
 
   # GET /items/1/edit
   def edit
+    @suppliers = Supplier.all
     @academies = Academy.all
   end
 
   # POST /items
   # POST /items.json
   def create
+    @suppliers = Supplier.all
     @academies = Academy.all
     @item = Item.new(item_params)
+    #@item.supplier_id = params[:supplier_id]
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
@@ -88,7 +92,7 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-        params.require(:item).permit(:description, :serial, :academy_id)
+        params.require(:item).permit(:description, :serial, :academy_id, :supplier_id)
     end
     # Populates item with lender and buyer ids
     def populate_item item 
