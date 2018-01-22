@@ -25,7 +25,7 @@ development:
   <<: *default
   database: inventory_development
   adapter: postgresql
-  host: 192.168.10.150
+  host: 127.0.0.1
   username: postgres
   password: 'password'
   encoding: unicode
