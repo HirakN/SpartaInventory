@@ -32,6 +32,11 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :supplier_id %>
+    <%= f.collection_select :supplier_id, @suppliers, :id, :name %>
+  </div>
+
+  <div class="form-group">
     <%= f.submit "Save Item" , class: "btn btn-lg btn-success btn-block" %>
   </div>
 

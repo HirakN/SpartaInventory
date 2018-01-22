@@ -27,7 +27,9 @@ ActiveRecord::Schema.define(version: 20180122160622) do
     t.datetime "updated_at",  null: false
     t.text     "serial"
     t.integer  "academy_id"
+    t.integer  "supplier_id"
     t.text     "notes"
+    t.index ["supplier_id"], name: "index_items_on_supplier_id", using: :btree
   end
 
   create_table "logs", force: :cascade do |t|
@@ -44,5 +46,12 @@ ActiveRecord::Schema.define(version: 20180122160622) do
     t.index ["lender_id"], name: "index_logs_on_lender_id", using: :btree
   end
 
+  create_table "suppliers", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "items", "suppliers"
   add_foreign_key "logs", "items"
 end

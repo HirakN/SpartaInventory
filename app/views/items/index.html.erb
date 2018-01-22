@@ -23,6 +23,7 @@
                   <th>Serial Number</th>
                   <th>Description</th>
                   <th>Academy</th>
+                  <th>Supplier</th>
                   <th>Status</th>
                   <th>Lender</th>
                   <th>Borrower</th>
@@ -35,7 +36,11 @@
                 <td><%= item.serial %></td> 
                 <td><a href="<%= edit_item_path item %>"><%= item.description %></a></td>
                 <td><%= item.academy.try(:name) %></td>
-              
+                <% if(item.supplier_id) %>
+                <td><%= Supplier.find(item.supplier_id).name %></td>
+                <% else %>
+                <td>None</td>
+                <% end %>
                 <% if item.current %>
                   <td class="checked-out">
                     <%= link_to "Check-in", checkin_log_path(item.current), data: { confirm: 'Are you sure?' } %>    

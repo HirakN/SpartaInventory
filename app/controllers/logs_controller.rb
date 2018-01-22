@@ -3,7 +3,7 @@ class LogsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   before_action :set_log, only: [:show, :edit, :update, :destroy, :checkin]
-  # before_action :check_login
+  #before_action :check_login
 
   # GET /logs
   # GET /logs.json
