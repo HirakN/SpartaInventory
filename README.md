@@ -54,7 +54,7 @@ Assuming you have logged in to the app machine you will find the app files in th
 You can now run the following commands to create and seed the database and then to run the app as normal:
 
 ```bash
-cd app
+cd /home/ubuntu/app
 bundle install
 rake db:create
 rake db:migrate
