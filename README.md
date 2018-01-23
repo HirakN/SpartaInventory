@@ -2,6 +2,8 @@
 
 ## Installation
 
+Students must be added to the Sparta Students github team to access the cookbooks needed for this environment.
+
 ### Install VirtualBox, Vagrant and Chef
 
 The easiest way to get this project running is by using Vagrant. Vagrant starts and controls virtual machines for you using VirtualBox. This project has been setup to create two virtual machines in a 2 tier structure. One for the app and another for the database. It will install all the necessary sofware on both. To use this setup you need to install VirtualBox, Vagrant and Chef for your machine.
