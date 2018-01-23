@@ -12,12 +12,7 @@ The easiest way to get this project running is by using Vagrant. Vagrant starts 
 
 [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-Chef is most easily installed from the command line:
-
-#### Linux and Mac
-```bash
-curl -L https://www.chef.io/chef/install.sh | sudo bash
-```
+[ChefDK](https://downloads.chef.io/chefdk)
 
 #### Windows
 Please refer to instructions for the windows platform
