@@ -12,7 +12,8 @@ Vagrant.configure("2") do |config|
       app.hostsupdater.aliases = ["development.local"]
       app.vm.synced_folder ".", "/home/ubuntu/app"
       app.vm.provision "chef_solo" do |chef|
-          chef.run_list = ['recipe[rails-server::default]']
+          chef.add_recipe "rails-server::default"
+          chef.add_recipe "nginx::default"
       end
   end
 

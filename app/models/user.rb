@@ -2,7 +2,7 @@ class User
   include HTTParty
   attr_accessor :id , :first_name, :last_name, :role, :email
 
-  base_uri "http://identity.spartaglobal.academy/"
+  base_uri APP_CONFIG['identity_api_url']
 
   @@token = ""
 

@@ -10,5 +10,4 @@ class SessionControllerTest < ActionDispatch::IntegrationTest
     get session_logout_url
     assert_response :success
   end
-
 end
