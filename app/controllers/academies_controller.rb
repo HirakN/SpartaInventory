@@ -1,6 +1,11 @@
 class AcademiesController < ApplicationController
   before_action :set_academy, only: [:show, :edit, :update, :destroy]
 
+   def index
+    @academies = Academy.all 
+    
+  end
+
   # GET /academies/new
   def new
     @academy = Academy.new
@@ -13,7 +18,7 @@ class AcademiesController < ApplicationController
 
     respond_to do |format|
       if @academy.save
-        format.html { redirect_to items_url, notice: 'Academy was successfully created.' }
+        format.html { redirect_to academies_path, notice: 'Academy was successfully created.' }
         format.json { render :show, status: :created, location: @academy }
       else
         format.html { render :new }
@@ -22,12 +27,24 @@ class AcademiesController < ApplicationController
     end
   end
 
+def update
+  respond_to do |format|
+    if @academy.update(academy_params)
+      format.html { redirect_to academies_path, notice: 'Supplier was successfully updated.' }
+      format.json { render :show, status: :ok, location: @academy }
+    else
+      format.html { render :edit }
+      format.json { render json: @academy.errors, status: :unprocessable_entity }
+    end
+  end
+end
+
   # DELETE /academies/1
   # DELETE /academies/1.json
   def destroy
     @academy.destroy
     respond_to do |format|
-      format.html { redirect_to academies_url, notice: 'Academy was successfully destroyed.' }
+      format.html { redirect_to academies_path, notice: 'Academy was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

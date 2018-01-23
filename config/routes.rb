@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :suppliers, only: [:index, :create, :new, :edit, :update, :destroy]
   resources :users
+  resources :academies
 
   resources :logs
 
@@ -19,11 +20,11 @@ Rails.application.routes.draw do
 
   get 'logs/:id/checkin' , to: 'logs#checkin', as: 'checkin_log'
 
-  get '/academies/new', to: 'academies#new'
+  # get '/academies/new', to: 'academies#new'
 
-  post '/academies', to: 'academies#create'
+  # post '/academies', to: 'academies#create'
 
-  delete '/academies/:id', to: 'academies#delete'
+  # delete '/academies/:id', to: 'academies#delete'
   
 
 end
