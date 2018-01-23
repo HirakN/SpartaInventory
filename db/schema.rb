@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20180122160622) do
     t.datetime "updated_at",  null: false
     t.text     "serial"
     t.integer  "academy_id"
-    t.text     "notes"
     t.integer  "supplier_id"
+    t.text     "notes"
     t.index ["supplier_id"], name: "index_items_on_supplier_id", using: :btree
   end
 

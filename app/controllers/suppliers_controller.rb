@@ -1,6 +1,7 @@
 class SuppliersController < ApplicationController
   before_action :set_supplier, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_login
+  
   # GET /suppliers
   # GET /suppliers.json
   def index
