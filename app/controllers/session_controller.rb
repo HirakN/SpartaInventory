@@ -12,7 +12,7 @@ class SessionController < ApplicationController
   def create
 
     response = User.authenticate params[:email], params[:password]
-
+    puts APP_CONFIG['identity_api_url']
     if response.success?
 
       # parse the response
@@ -28,7 +28,7 @@ class SessionController < ApplicationController
       # redirect
       redirect_to logs_path
     else
-      redirect_to login_path
+      redirect_to login_path, notice: 'Your details are incorrect'
     end
   end
 end

@@ -33,12 +33,11 @@
 			"type": "file",
 			"source": ".",
 			"destination": "/home/ubuntu/app"
-
 		},
 		{
 			"type": "chef-solo",
 			"cookbook_paths": ["./cookbooks"],
-			"run_list":["rails-server::default"]
+			"run_list":["rails-server::default","nginx::default"]
 		},
 		{
 			"type": "shell",
